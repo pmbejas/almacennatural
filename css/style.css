@@ -1,15 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap');
-* {
+*{
     font-family: 'Hind', sans-serif;
+    margin: 20px;
+
+}
+body{
+    background-color: white;
+}
+h1 {
+    color: #048A07;
+
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-
+a{
+color: white;
+text-decoration: none;
+}
+h2 {
+   font-weight:600;
+    }
+h4 {
+    font-weight: 400;
+    color: black;
 }
 
 header {
@@ -18,402 +30,49 @@ header {
     align-items: center;
     justify-content: space-between;
     background-color: #048A07;
-    width: 100%;
-    height: 120px;
+    width: 1280px;
+    height: 110px;
     font-family: 'Hind:@600', sans-serif;
-    padding: 0px;
-    position: fixed;
-    top: 0px;
-    z-index: 2;
-}
-
+    }
 nav {
     display: flex;
     gap: 60px;
-    padding: 0px 100px;
+
 }
-
-.logotipoHeader {
-    margin-top: 25px;
-    margin-left: 150px;
-    height: 230px;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 95%;
-}
-
-h1 {
-    color: #048A07;
-}
-
-.principal {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    margin-top: 120px;
-    z-index: 1;
-}
-
-.cabecera {
-    width: 100%;
-    margin-top: 15px;
-}
-
-.productos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
-.recetas {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
-.cajonRecetas {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin: 30px 0px;
-}
-
-.cajonProductos {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin: 30px 0px;
-}
-
-.titulo {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 10px;
-    background-image: url("/img/fondoTitulo.avif");
-    background-size: cover;
-    width: 100%;
-    height: 250px;
-}
-
-.cajaTitulo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    
-    width: 50%;
-    height: 80%;
-    background-color: #f34500;
-    margin-left: 30px;
-}
-
-.cajaTitulo2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-    height: 80%;
-    margin-right: 30px;
-}
-
-.textoCajaTitulo {
-    color: white;
-    font-size: 2.5rem;
-    font-weight: 700;
-}
-
-.textoCajaSubtitulo {
-    color: white;
-    font-size: 1.5rem;
-    font-weight: 300;
-}
-
-.imagenCajaTitulo {
-    height: 90%;
-    opacity: .7;
-    margin-right: 50px;
-}
-
-.textoPresentacion {
-    font-size: 1.4rem;
-    font-weight: 500;
-    text-align: center;
-    margin-top: 5px;
-    margin-bottom: 20px;
-}
-.itemMenu {
-    color: white;
-    font-size: 1.2rem;
-}
-
-
-.itemMenu:hover {
-    color: #8b8b8b;
-    cursor: pointer;
-}
-
-.pointer:hover {
-    cursor: pointer;
-}
-
-h2 {
-   font-weight:600;
-    }
-
-h4 {
-    font-weight: 400;
-    color: black;
-}
-
 .caja {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 70px;
+    width: 1000px;
+    height: 50px;
     background-color: #048A07;
     color: white;
     font-family: 'Hind:@600', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin-top: 10px;
-}
-
-.card {
-    display: flex;
-    flex-direction: column;
-    border: solid 1px #d3d3d3;
-    border-radius: 5px;
-    padding: 10px 15px;
-    width: 250px;
-    box-shadow: 5px 5px 5px #858585;
-}
-
-.cardFotoProducto {
-    width: 100%;
-    border-radius: 5px;
-    
-}
-
-.cardNombreProducto {
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-top: 10px;
-}
-
-.cardPrecioProducto {
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin-top: 10px;
-    color: #000;
-    align-self: center;
-
-}
-
-.video-responsive {
-    height: 0;
-    overflow: hidden;
-    padding-bottom: 56.25%;
-    padding-top: 30px;
-    position: relative;
-}
-    
-.video-responsive iframe, .video-responsive object, .video-responsive embed {
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-}
-
+    font-size: 12pt;
+  
+    }
+    .video-responsive {
+        height: 0;
+        overflow: hidden;
+        padding-bottom: 56.25%;
+        padding-top: 30px;
+        position: relative;
+        }
+    .video-responsive iframe, .video-responsive object, .video-responsive embed {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        }
 footer {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    background-color: #048A07;
-    width: 100%;
-    height: 170px;
-   
-}
-
-.logoPie, .infoPie, .redesPie {
-    display: flex;
-    flex-direction: column;
-    width: 33%;
-    align-items: center;
-    justify-content: center;
-}
-
-.imgLogoPie {
-    height: 130px;
-}
-.textoPie {
-    color: white;
-    font-size: 1.5rem;
-    margin: 0px;
-}
-
-.textoInfoPie {
-    color: white;
-    font-size: 1.2rem;
-    margin: 0px;
-}
-
-.redesPie {
-    display: flex;
-    flex-direction: column;
-    color: white;
-}
-
-.ocultar {
-    display: none;
-}
-
-.scroll {
-    overflow: hidden;
-}
-
-.ventanaEmergente {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(29, 29, 29, 0.9);
-    top: 0px;
-    left: 0px;
-    overflow: hidden;
-    z-index: 2;
-    align-content: center;
-}
-
-.campo {
-    font-size: 1.1rem;
-}
-
-.contenidoVentanaEmergente {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
     justify-content: space-between;
-    left: 25%;
-    margin-top: 200px;
-    width: 50%;
-    background-color: #fff;
-    border-radius: 5px;
-    color: black;
-    align-self: center;
-}
-
-.contenidoVentanaEmergente input {
-    margin-top: 5px;
-}
-
-.tituloVentana {
-    background-color: black;
-    color: white;
-    padding: 10px 10px;
-    margin: 0;
-    border:none;
-}
-
-.contenidoVentana {
-    font-size: 1.2rem;
-    margin: 20px 0px;
-    display: flex;
-    flex-direction: column;
-    gap:30px;
-    padding: 10px 25px;
-
-}
-
-.textoTituloVentana {
-    font-size: 1.3rem;
-    font-weight: bold;
-}
-
-.imagenDescripcion {
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
-}
-
-.textoDescripcion {
-    font-weight: 500;
-}
-
-.precioProductoVentana {
-    font-size: 1.5rem;
-}
-
-.nombreProductoVentana {
-    color: #000;
-    font-size: 2rem;
-    font-weight: 600;
-}
-
-.imagenProductoVentana {
-    width: 50%;
-}
-.contenedorDatos {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.lineaDatos {
-    display: flex;
-    flex-direction: column;
-}
-
-.pieVentana {
-    display: flex;
-    flex-direction: row;
-    margin-top: 25px;
-    padding: 25px 15px;
-    gap: 20px;
-    justify-content: end;
-}
-
-.boton {
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    color: whitesmoke;
-    opacity: 0.8;
-    transition: 0.5s ease-in-out;
-}
-
-.boton:hover{
-    opacity: 1;
-}
-
-.btnCerrar {
     background-color: #048A07;
-}
-
-.btnModificar {
-    background-color: var(--colorBotonModificar);
-}
-
-.btnGuardar {
-    background-color: var(--colorBotonGuardar);
-}
-
-boton:hover{
-    opacity: 1;
+    width: 1280px;
+    height: 160px;
+    color: white;
+    
 }
