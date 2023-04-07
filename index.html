@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Almacén NAtural</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body id="cuerpo">
+    <header>
+        <div>
+            <img class="logotipoHeader" src="./img/logoBlancoHorizontal.svg" alt="logo de la empresa">
+        </div>
+        <nav>
+            <span class="itemMenu" onclick="mostrarPagina('inicio')">INICIO</span>
+            <span class="itemMenu" onclick="mostrarPagina('nosotros')">NOSOTROS</span>
+            <span class="itemMenu" onclick="mostrarPagina('productos')">PRODUCTOS</span>
+<!--             <span class="itemMenu" onclick="mostrarPagina('ofertas')">OFERTAS</span> -->
+            <span class="itemMenu" onclick="mostrarPagina('recetas')">RECETAS</span>
+            <span class="itemMenu" onclick="mostrarPagina('contacto')">CONTACTO</span>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="mainContent principal" id="itemInicio">
+            <div class="cabecera">
+                <div class="titulo">
+                    <div class="cajaTitulo">
+                        <span class="textoCajaTitulo">MERCADO NATURAL</span>
+                        <span class="textoCajaSubtitulo">Alimentos Frescos y Agroecológicos</span>
+                    </div>
+                    <div class="cajaTitulo2">
+                        <img class="imagenCajaTitulo" src="./img/logoBlanco.svg" alt="">
+                    </div>
+                </div>
+                <p class="textoPresentacion">Somos un alamacén de productos orgánicos y agroecológicos. Cada día te acercamos frutas, verduras,
+                    hortalizas, panificados, bebidas, elementos de higiene personal, plantas, semillas y productos para hacer tu propia huerta.
+                </p>
+            </div>
+            <div class="productos">
+                <div class="caja">
+                   PRODUCTOS
+                </div>
+                <div class="cajonProductos" id="cajonProductos">
+                    
+                </div>
+            </div>
+           
+            <div class="recetas">
+                <div class="caja">
+                    RECETAS
+                </div>
+                <div class="cajonRecetas">
+                    <div-video-responsive>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/f2HK51yWKuM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div-video-responsive>
+                </div>
+            </div>
+    
+
+        </div>
+        <div class="mainContent principal" id="itemNosotros">
+            SOBRE NOSOTROS
+        </div>
+        <div class="mainContent principal" id="itemProductos">
+            <div class="caja">
+                PRODUCTOS
+             </div>
+             <div class="cajonProductos" id="cajonProductos2">
+                 
+             </div>
+         </div>
+        </div>
+        <div class="mainContent principal" id="itemOfertas">
+            Ofertas
+        </div>
+        <div class="mainContent principal" id="itemRecetas">
+            <div class="caja">
+                RECETAS
+            </div>
+            <div class="cajonRecetas">
+                <div-video-responsive>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/f2HK51yWKuM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div-video-responsive>
+            </div>
+        </div>
+        <div class="mainContent principal" id="itemContacto">
+            Formulario de Contacto
+        </div>
+
+        <div class="ventanaEmergente ocultar" id="ventanaEmergente">
+            <div class="contenidoVentanaEmergente" id="contenidoVentanaEmergente">
+                
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="infoPie">
+            <p class="textoInfoPie">Esta página fue creada para ser presentada en el curso Argentina Programa.</p>
+            <p class="textoInfoPie">Bejas, Pablo - Collavino, Alejandro - Morzan, Marianela</p>
+            <p class="textoInfoPie">Comision 192 - Grupo 12</p>
+        </div>
+        <div class="logoPie">
+            <img class="imgLogoPie" src="./img/logoBlanco.svg" alt="">
+        </div>
+        <div class="redesPie">
+            <span class="textoPie">Seguinos en nuestras redes</span>
+            <div>
+                <i class="bi bi-facebook textoPie"></i>
+                <i class="bi bi-instagram textoPie"></i>
+                <i class="bi bi-twitter textoPie"></i>
+                <i class="bi bi-youtube textoPie"></i>                
+            </div>
+        </div>
+    </footer>
+    <script src="./js/script.js"></script>
+</body>
+</html>
