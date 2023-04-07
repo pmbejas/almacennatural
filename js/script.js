@@ -63,6 +63,27 @@ const toggleVentana = () => {
 
     const ventana = document.getElementById('ventanaEmergente')
     ventana.classList.toggle('ocultar')
+
+    const globo = document.getElementById('globoCarrito')
+    globo.classList.toggle('ocultar')
+}
+
+const mostrarCarritoCompras = () => {
+    toggleVentana()
+
+    const ventana = document.getElementById('contenidoVentanaEmergente')
+    ventana.innerHTML=`
+        <div class="tituloVentana" >
+            <span class="textoTituloVentana">CARRITO DE COMPRAS</span>
+        </div>
+        <div class="contenidoVentana">
+            TODAVIA EN CONSTRUCCION
+        </div>
+        <div class="pieVentana">
+            <input type="button" id="botonCancelar" class="boton btnCerrar pointer" onclick="toggleVentana()" value="Cerrar">
+        </div>
+
+    ` 
 }
 
 const mostrarDatosProducto = (id) => {
