@@ -302,7 +302,8 @@ footer {
 }
 
 .campo {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    height: 50px;
 }
 
 .contenidoVentanaEmergente {
@@ -396,6 +397,8 @@ footer {
     color: whitesmoke;
     opacity: 0.8;
     transition: 0.5s ease-in-out;
+    height: 50px;
+    font-size: 1.2rem;
 }
 
 .boton:hover{
@@ -404,10 +407,11 @@ footer {
 
 .btnCerrar {
     background-color: #048A07;
+    padding: 10px 30px;
 }
 
-.btnModificar {
-    background-color: var(--colorBotonModificar);
+.btnAgregar {
+    background-color: #140044;
 }
 
 .btnGuardar {
@@ -431,6 +435,13 @@ boton:hover{
     box-shadow: 5px 5px 5px #858585;
 }
 
+.cantidadCarrito {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+}
+
 .elementosCarrito {
     display: flex;
     width: 100%;
@@ -444,4 +455,55 @@ boton:hover{
 .iconoCarrito {
     color: black;
     font-size: 2.5rem;
+}
+
+.tablaCarrito {
+    background-color: #919191;
+    color: black;
+    border-radius: 5px;
+    table-layout: fixed;
+    width:100%;
+    border-collapse: collapse;
+    border: 1px solid rgb(163, 161, 161);
+/*     box-shadow: 2px 2px 20px rgb(218, 218, 218); */
+}
+
+.tablaCarrito caption {
+    color: var(--colorTextoPrincipal);
+    padding: 20px 0px;
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+.tablaCarrito thead th:nth-child(1) {
+    width: 10%;
+}
+
+.tablaCarrito thead th:nth-child(2) {
+    width: 50%;
+}
+
+.tablaCarrito thead th:nth-child(3) {
+    width: 15%;
+}
+
+.tablaCarrito thead th:nth-child(4) {
+    width: 15%;
+}
+
+.tablaCarrito thead th:nth-child(5) {
+    width: 10%;
+}
+
+.tablaCarrito thead {
+    background-color: var(--colorFondoEncabezadoTabla);
+    color: var(--colorTextoEncabezadoTabla);
+}
+.tablaCarrito tbody td,th {
+    padding: 10px 0px;
+    border: 1px solid rgb(163, 161, 161);
+    text-align: center;
+}
+
+.tablaCarrito tbody td:nth-child(2) {
+    padding: 10px 10px;
 }
