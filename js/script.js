@@ -6,33 +6,46 @@ let carrito = {
     listadoProductos: []
 }
 
+const mostrarMenuMovil = () => {
+    const menu = document.getElementById('barraNavegacionMovil')
+    menu.classList.toggle('ocultar')
+}
+
 const mostrarPagina = (eleccion) => {
     let bloques = document.getElementsByClassName('mainContent')
     for (const bloque of bloques) {
         bloque.classList.add('ocultar')
     }
+
     switch (eleccion) {
         case 'inicio':
-            var bloque = document.getElementById('itemInicio')
+            let bloques = document.getElementsByClassName('mainContent')
+                    for (const bloque of bloques) {
+                bloque.classList.remove('ocultar')
+            }
+            var bloque = document.getElementById('itemNosotros')
+            bloque.classList.add('ocultar')
+            var bloque = document.getElementById('itemContacto')
+            bloque.classList.add('ocultar')
             break;
         case 'nosotros':
             var bloque = document.getElementById('itemNosotros')
+            bloque.classList.toggle('ocultar')
             break;
         case 'productos':
             var bloque = document.getElementById('itemProductos')
-            mostrarProductos('./db/productos.json','cajonProductos2')
-            break;
-        case 'ofertas':
-            var bloque = document.getElementById('itemOfertas')
+            mostrarProductos('./db/productos.json','cajonProductos')
+            bloque.classList.toggle('ocultar')
             break;
         case 'recetas':
             var bloque = document.getElementById('itemRecetas')
+            bloque.classList.toggle('ocultar')
             break;
         case 'contacto':
             var bloque = document.getElementById('itemContacto')
+            bloque.classList.toggle('ocultar')
             break;
     }
-    bloque.classList.toggle('ocultar')
 }
 
 const mostrarProductos = (url, elemento) => {
@@ -45,9 +58,9 @@ const mostrarProductos = (url, elemento) => {
             for (producto of datos) {
                 httpProductos.innerHTML += `
                     <div class="card">
-                    <img class="cardFotoProducto" src="${producto.foto}" alt="lechuga">
+                    <img class="cardFotoProducto pointer" onclick="mostrarDatosProducto(${producto.id})" src="${producto.foto}" alt="lechuga">
                     <span class="cardNombreProducto pointer" onclick="mostrarDatosProducto(${producto.id})">${producto.nombre}</span>
-                    <span class="cardPrecioProducto">${producto.precio}</span>
+                    <span class="cardPrecioProducto">$ ${producto.precio}</span>
                     </div>
                 `
                 productos.push(producto)
@@ -68,57 +81,78 @@ const toggleVentana = () => {
     globo.classList.toggle('ocultar')
 }
 
-const mostrarCarritoCompras = () => {
-    toggleVentana()
-
+const CarritoCompras = (accion) => {
+    if (accion=="mostrar") {
+        toggleVentana()
+    }
     const ventana = document.getElementById('contenidoVentanaEmergente')
     ventana.innerHTML=`
-        <div class="tituloVentana" >
-            <span class="textoTituloVentana">CARRITO DE COMPRAS</span>
-        </div>
-        <div class="contenidoVentana">
-            <table class="tablaCarrito">
-                <thead>
-                    <tr>
-                        <th scope="col">Cant.</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Precio</th>
-                        <th scope="col">Total</th>
-                        <th scope="col"></th>
-                    </tr>
-                </thead>
-                <tbody id="tablaCarrito" id="tablaCarrito">
-                </tbody>
-            </table>
-        </div>
-    ` 
-    const tablaElementosCarrito = document.getElementById('tablaCarrito')
-    for (item of carrito.listadoProductos) {
-        tablaElementosCarrito.innerHTML += `
-                <th scope='row'>${item.cantidad}</th>
-                <td>${item.nombre}</td>
-                <td>${item.precio}</td>
-                <td>${item.precio * item.cantidad}</td>
-                <td><i class="bi bi-trash3 pointer" onclick="eliminarItemCarrito(${item.id})"></i></td>
-            </tr>
+            <div class="tituloVentana" >
+                <span class="textoTituloVentana">CARRITO DE COMPRAS</span>
+            </div>`
+    if (carrito.cantidadItems > 0) {
+        ventana.innerHTML +=`
+            <div class="contenidoVentana">
+                <div class="resumenCarrito">
+                    <div class="cardResumenCarrito">
+                        <span class="tituloCardResumenCarrito">Cantidad de Items</span>
+                        <span class="textoCardResumenCarrito">${carrito.cantidadItems}</span>
+                    </div>
+                    <div class="cardResumenCarrito">
+                        <span class="tituloCardResumenCarrito">Total a Pagar</span>
+                        <span class="textoCardResumenCarrito">$ ${carrito.totalPagar}</span>
+                    </div>
+                </div>
+                <table class="tablaCarrito">
+                    <span class="tituloTablaCarrito">Detalle de Productos:</span>
+                    <thead>
+                        <tr>
+                            <th scope="col">Cant.</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Total</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaCarrito" id="tablaCarrito">
+                    </tbody>
+                </table>
+            </div>
+        ` 
+        const tablaElementosCarrito = document.getElementById('tablaCarrito')
+        for (item of carrito.listadoProductos) {
+            tablaElementosCarrito.innerHTML += `
+                    <th scope='row'>${item.cantidad}</th>
+                    <td>${item.nombre}</td>
+                    <td>$ ${item.precio}</td>
+                    <td>$ ${item.precio * item.cantidad}</td>
+                    <td><i class="bi bi-trash3 pointer" onclick="eliminarItemCarrito(${item.id})"></i></td>
+                </tr>
+            `
+        }
+    } else {
+        ventana.innerHTML += `
+            <div class="contenidoVentana carritoVacio">
+                EL CARRITO ESTA VACIO.<br>HACE TU COMPRA EN LA SECCION PRODUCTOS
+            </div>
         `
     }
     ventana.innerHTML += `
-        <div class="pieCarrito">
-            <div class="cantidadItems">
-                <span class="">Cantidad de Items</span>
-                <span class="">${carrito.cantidadItems}</span>
-            </div>
-            <div class="totalPagar">
-                <span class="">Total a Pagar</span>
-                <span class="">${carrito.totalPagar}</span>
-            </div>
+        <div class="pieVentana">
+            <input type="button" id="botonCancelar" class="boton btnCerrar pointer" onclick="toggleVentana()" value="Cerrar">
         </div>
-    <div class="pieVentana">
-        <input type="button" id="botonCancelar" class="boton btnCerrar pointer" onclick="toggleVentana()" value="Cerrar">
-    </div>
+        `
+}
 
-    `
+const eliminarItemCarrito = (id) => {
+    let indice = carrito.listadoProductos.findIndex(elemento => elemento.id === id); 
+    carrito.cantidadItems = carrito.cantidadItems - parseInt(carrito.listadoProductos[indice].cantidad)
+    carrito.totalPagar = carrito.totalPagar - parseInt(carrito.listadoProductos[indice].total)
+    if (indice !== -1) {
+        carrito.listadoProductos.splice(indice, 1);
+    }
+    CarritoCompras('actualizar')
+    alerta('celeste','Se ha Eliminado el Producto del Carrito', 2500)
 }
 
 const agregarProductoCarrito = (id, cantidad, nombre, precio) => {
@@ -141,6 +175,7 @@ const agregarProductoCarrito = (id, cantidad, nombre, precio) => {
         carrito.totalPagar += precio * parseInt(inputCantidad.value)
         carrito.listadoProductos.push(producto)
     }
+    alerta('verde','Se agregó el prducto al carrito de compras. Muchas Gracias', 2500)
 }
 
 const mostrarDatosProducto = (id) => {
@@ -173,8 +208,47 @@ const mostrarDatosProducto = (id) => {
     ` 
 }
 
+const alerta = (fondo, texto, tiempo) => {
+    const ventana = document.getElementById('ventanaAlert')
+    while (ventana.classList.length > 0) {
+        ventana.classList.remove(ventana.classList.item(0))    
+    }
+    ventana.classList.add('ventanaAlert')
+    
+    switch (fondo) {
+        case 'naranja':
+            ventana.classList.add('fondoNaranja')
+            break;
+        case 'verde':
+            ventana.classList.add('fondoVerde')
+            break;
+        case 'blanco':
+            ventana.classList.add('fondoBlanco')
+            break;
+        case 'azul':
+            ventana.classList.add('fondoAzul')
+            break;
+        case 'negro':
+            ventana.classList.add('fondoNegro')
+            break;
+        case 'celeste':
+            ventana.classList.add('fondoCeleste')
+            break;
+    }
+    setTimeout(() => {
+        ventana.classList.add('opacidad1')
+      }, 10);
+
+
+    const textoVentana = document.getElementById('textoAlert')
+    textoVentana.innerHTML=`${texto}`
+
+    setTimeout(() => {
+        ventana.classList.remove('opacidad1');
+      }, tiempo);
+      setTimeout(() => {
+        ventana.classList.add('ocultar');
+      }, tiempo+1000);
+}
+
 mostrarProductos('./db/productos.json','cajonProductos')
-
-
-
-

@@ -11,45 +11,57 @@
 
 <body id="cuerpo">
     <header>
-        <div>
-            <img class="logotipoHeader" src="./img/logoBlancoHorizontal.svg" alt="logo de la empresa">
+        <div class="cabeceraPagina">
+            <i class="bi bi-list hamburguesa pointer" onclick="mostrarMenuMovil()"></i>
+            <div>
+                <img class="logotipoHeader" src="./img/logoBlancoHorizontal.svg" alt="logo de la empresa">
+            </div>
+            <nav class="barraNavegacion">
+                <span class="itemMenu" onclick="mostrarPagina('inicio')">INICIO</span>
+                <span class="itemMenu" onclick="mostrarPagina('nosotros')">NOSOTROS</span>
+                <span class="itemMenu" onclick="mostrarPagina('productos')">PRODUCTOS</span>
+                <span class="itemMenu" onclick="mostrarPagina('recetas')">RECETAS</span>
+                <span class="itemMenu" onclick="mostrarPagina('contacto')">CONTACTO</span>
+            </nav>
         </div>
-        <nav>
-            <span class="itemMenu" onclick="mostrarPagina('inicio')">INICIO</span>
-            <span class="itemMenu" onclick="mostrarPagina('nosotros')">NOSOTROS</span>
-            <span class="itemMenu" onclick="mostrarPagina('productos')">PRODUCTOS</span>
-<!--             <span class="itemMenu" onclick="mostrarPagina('ofertas')">OFERTAS</span> -->
-            <span class="itemMenu" onclick="mostrarPagina('recetas')">RECETAS</span>
-            <span class="itemMenu" onclick="mostrarPagina('contacto')">CONTACTO</span>
-        </nav>
+        <nav class="barraNavegacionMovil ocultar" id="barraNavegacionMovil">
+            <span class="itemMenu" onclick="mostrarPagina('inicio'); mostrarMenuMovil()">INICIO</span>
+            <span class="itemMenu" onclick="mostrarPagina('nosotros'); mostrarMenuMovil()">NOSOTROS</span>
+            <span class="itemMenu" onclick="mostrarPagina('productos'); mostrarMenuMovil()">PRODUCTOS</span>
+            <span class="itemMenu" onclick="mostrarPagina('recetas'); mostrarMenuMovil()">RECETAS</span>
+            <span class="itemMenu" onclick="mostrarPagina('contacto'); mostrarMenuMovil()">CONTACTO</span>
+        </nav>  
     </header>
     
     <main>
-        <div class="mainContent principal" id="itemInicio">
-            <div class="cabecera">
+        <div class="principal">
+            <div class="mainContent" id="itemCabecera">
                 <div class="titulo">
                     <div class="cajaTitulo">
                         <span class="textoCajaTitulo">MERCADO NATURAL</span>
                         <span class="textoCajaSubtitulo">Alimentos Frescos y Agroecológicos</span>
                     </div>
                     <div class="cajaTitulo2">
-                        <img class="imagenCajaTitulo" src="./img/logoBlanco.svg" alt="">
+                        <img class="imagenCajaTitulo" src="./img/logoBlanco2.svg" alt="">
                     </div>
                 </div>
                 <p class="textoPresentacion">Somos un alamacén de productos orgánicos y agroecológicos. Cada día te acercamos frutas, verduras,
                     hortalizas, panificados, bebidas, elementos de higiene personal, plantas, semillas y productos para hacer tu propia huerta.
                 </p>
             </div>
-            <div class="productos">
+
+            <!-- Sección PRODUCTOS. Los datos son obtenidos por javascript desde un archivo JSON. -->
+            <div class="mainContent" id="itemProductos">
                 <div class="caja">
-                   PRODUCTOS
-                </div>
-                <div class="cajonProductos" id="cajonProductos">
-                    
-                </div>
+                    PRODUCTOS
+                 </div>
+                 <div class="cajonProductos" id="cajonProductos">
+                     
+                 </div>
             </div>
-           
-            <div class="recetas">
+
+             <!-- Sección RECETAS. -->
+             <div class="mainContent" id="itemRecetas">
                 <div class="caja">
                     RECETAS
                 </div>
@@ -57,52 +69,79 @@
                     <div-video-responsive>
                         <iframe width="560" height="315" src="https://www.youtube.com/embed/f2HK51yWKuM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div-video-responsive>
+                    <div-video-responsive>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/f2HK51yWKuM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div-video-responsive>
+                    <div-video-responsive>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/f2HK51yWKuM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div-video-responsive>
+                    <div-video-responsive>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/f2HK51yWKuM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div-video-responsive>
                 </div>
             </div>
-    
 
-        </div>
-        <div class="mainContent principal" id="itemNosotros">
-            SOBRE NOSOTROS
-        </div>
-        <div class="mainContent principal" id="itemProductos">
-            <div class="caja">
-                PRODUCTOS
-             </div>
-             <div class="cajonProductos" id="cajonProductos2">
-                 
-             </div>
-         </div>
-        </div>
-        <!-- <div class="mainContent principal" id="itemOfertas">
-            Ofertas
-        </div> -->
-        <div class="mainContent principal" id="itemRecetas">
-            <div class="caja">
-                RECETAS
+            <!-- Sección NOSOTROS. -->
+            <div class="mainContent ocultar" id="itemNosotros">
+                <div class="caja">
+                    Sobre nosotros
+                </div>
+                <div class="cajonNosotros">
+                    <div class="titulo">
+                        <div class="cajaTitulo">
+                            <span class="textoCajaTitulo">MERCADO NATURAL</span>
+                            <span class="textoCajaSubtitulo">Alimentos Frescos y Agroecológicos</span>
+                        </div>
+                        <div class="cajaTitulo2">
+                            <img class="imagenCajaTitulo" src="./img/logoBlanco2.svg" alt="">
+                        </div>
+                    </div>
+                    <p class="textoPresentacion">Somos un alamacén de productos orgánicos y agroecológicos. Cada día te acercamos frutas, verduras,
+                        hortalizas, panificados, bebidas, elementos de higiene personal, plantas, semillas y productos para hacer tu propia huerta.
+                    </p>
+                    <div class="descripcionNosotros">
+                        <img src="./img/logoColor2.svg" alt="">
+                        <p>
+                            Cupcake ipsum dolor sit amet candy canes pie bear claw. Marzipan carrot cake powder pudding lollipop sweet. Dessert apple pie apple pie cake chocolate bar. Tart marzipan cookie cake croissant cake. Jelly-o gummi bears candy carrot cake topping fruitcake caramels tart donut. Soufflé dessert powder candy canes cookie tootsie roll pastry cheesecake tootsie roll. Dessert caramels apple pie icing toffee tart danish croissant. Sugar plum sweet powder toffee brownie. Marshmallow caramels soufflé danish cotton candy lollipop pastry pudding. Biscuit cookie chocolate bar sweet roll sugar plum jelly gummies wafer. I love lemon drops jelly beans tart apple pie cupcake donut soufflé halvah. Tiramisu sweet roll cake gummies I love chocolate topping marzipan I love.
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="cajonRecetas">
-                <div-video-responsive>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/f2HK51yWKuM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div-video-responsive>
+
+            <!-- Sección CONTACTO. -->
+            <div class="mainContent ocultar" id="itemContacto">
+                <div class="caja">
+                    Contacto
+                </div>
+                <div class="cajonContacto">
+                    Dejanos tu consulta a través del formulario.
+                </div>
             </div>
         </div>
-        <div class="mainContent principal" id="itemContacto">
-            Formulario de Contacto
-        </div>
+
+        <!-- Esta Seccion contiene la ventana emergente que se utiliza para diferentes propósitos.
+             La misma se completa con javascript -->
         <div class="ventanaEmergente ocultar" id="ventanaEmergente">
             <div class="contenidoVentanaEmergente" id="contenidoVentanaEmergente">
                 
             </div>
         </div>
+
+        <!-- Esta Seccion contiene el globo que muestra el Carrito de Compras -->
         <div class="notificacionCarrito" id="globoCarrito">
-            <div class="elementosCarrito pointer" onclick="mostrarCarritoCompras()">
+            <div class="elementosCarrito pointer" onclick="CarritoCompras('mostrar')">
                 <i class="bi bi-cart2 iconoCarrito"></i>
             </div>
         </div>
+
+        <!-- Esta Seccion contiene la ventana de avisos -->
+        <div class="ventanaAlert ocultar" id="ventanaAlert">
+            <span class="textoAlert" id="textoAlert"></span>
+        </div>
+        
     </main>
-    
-    <footer>
+
+    <footer class="pieDePagina">
         <div class="infoPie">
             <p class="textoInfoPie">Esta página fue creada para ser presentada en el curso Argentina Programa.</p>
             <p class="textoInfoPie">Bejas, Pablo - Collavino, Alejandro - Morzan, Marianela</p>

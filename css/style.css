@@ -3,21 +3,35 @@
     font-family: 'Hind', sans-serif;
 }
 
+:root {
+    --naranja: rgb(243, 69, 0);
+    --verde: rgb(4, 138, 7);
+    --blanco: rgb(255, 255, 255);
+    --negro: rgb(0, 0, 0);;
+    --azul: rgb(20, 59, 143);;
+    --celeste: rgb(70, 156, 255);;
+}
+
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 0;
-
 }
 
 header {
     display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.cabeceraPagina {
+    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    background-color: #048A07;
+    background-color: var(--verde);
     width: 100%;
     height: 120px;
     font-family: 'Hind:@600', sans-serif;
@@ -27,27 +41,33 @@ header {
     z-index: 2;
 }
 
-nav {
+.barraNavegacion {
     display: flex;
+    flex-direction: row;
     gap: 60px;
     padding: 0px 100px;
+
+}
+
+.barraNavegacionMovil {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--verde);
+    width: 100%;
+    margin-top: 65px;
+    height: auto;
+    gap: 15px;
+    padding: 15px 10px;
+    z-index: 3;
+}
+
+.hamburguesa {
+    display: none;
 }
 
 .logotipoHeader {
-    margin-top: 25px;
     margin-left: 150px;
-    height: 230px;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 95%;
-}
-
-h1 {
-    color: #048A07;
+    height: 90px;
 }
 
 .principal {
@@ -56,28 +76,19 @@ h1 {
     align-items: center;
     width: 100%;
     margin: 0;
+    margin-top: 135px;
     padding: 0;
-    margin-top: 120px;
-    z-index: 1;
 }
 
-.cabecera {
-    width: 100%;
-    margin-top: 15px;
-}
-
-.productos {
-    display: flex;
+.mainContent {
+    display: block;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: 95%;
 }
 
-.recetas {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+h1 {
+    color: var(--verde);
 }
 
 .cajonRecetas {
@@ -87,19 +98,31 @@ h1 {
     justify-content: center;
     gap: 30px;
     margin: 30px 0px;
+    width: 100%;
 }
 
 .cajonProductos {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: start;
     gap: 30px;
     margin: 30px 0px;
 }
 
+.cajonContacto {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin: 30px 0px;
+    width: 100%;
+}
+
 .titulo {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     margin-top: 10px;
@@ -117,7 +140,7 @@ h1 {
     
     width: 50%;
     height: 80%;
-    background-color: #f34500;
+    background-color: var(--naranja);
     margin-left: 30px;
 }
 
@@ -145,7 +168,7 @@ h1 {
 
 .imagenCajaTitulo {
     height: 90%;
-    opacity: .7;
+    opacity: .8;
     margin-right: 50px;
 }
 
@@ -186,12 +209,11 @@ h4 {
     justify-content: center;
     width: 100%;
     height: 70px;
-    background-color: #048A07;
+    background-color: var(--naranja);
     color: white;
     font-family: 'Hind:@600', sans-serif;
     font-size: 1.2rem;
     font-weight: 500;
-    margin-top: 10px;
 }
 
 .card {
@@ -221,7 +243,7 @@ h4 {
     font-weight: 700;
     margin-top: 10px;
     color: #000;
-    align-self: center;
+    align-self: start;
 
 }
 
@@ -246,7 +268,7 @@ footer {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background-color: #048A07;
+    background-color: var(--verde);
     width: 100%;
     height: 170px;
    
@@ -281,6 +303,26 @@ footer {
     color: white;
 }
 
+
+.ventanaAlert {
+    display: block;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 20px 50px;
+    z-index: 6;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 400;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.opacidad1  {
+    opacity: 1;
+}
+
 .ocultar {
     display: none;
 }
@@ -312,12 +354,13 @@ footer {
     flex-direction: column;
     justify-content: space-between;
     left: 25%;
-    margin-top: 200px;
+    margin-top: 50px;
     width: 50%;
     background-color: #fff;
     border-radius: 5px;
     color: black;
     align-self: center;
+    border: solid 1px #000000;
 }
 
 .contenidoVentanaEmergente input {
@@ -330,6 +373,7 @@ footer {
     padding: 10px 10px;
     margin: 0;
     border:none;
+    border-radius: 5px 5px 0px 0px;
 }
 
 .contenidoVentana {
@@ -337,9 +381,8 @@ footer {
     margin: 20px 0px;
     display: flex;
     flex-direction: column;
-    gap:30px;
     padding: 10px 25px;
-
+    border-radius: 5px;
 }
 
 .textoTituloVentana {
@@ -406,12 +449,12 @@ footer {
 }
 
 .btnCerrar {
-    background-color: #048A07;
+    background-color: var(--verde);
     padding: 10px 30px;
 }
 
 .btnAgregar {
-    background-color: #140044;
+    background-color: var(--naranja);
 }
 
 .btnGuardar {
@@ -457,23 +500,39 @@ boton:hover{
     font-size: 2.5rem;
 }
 
+.carritoVacio {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 20px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: center;
+}
+
 .tablaCarrito {
-    background-color: #919191;
+    background-color: #ffffff;
     color: black;
     border-radius: 5px;
     table-layout: fixed;
     width:100%;
     border-collapse: collapse;
     border: 1px solid rgb(163, 161, 161);
+    margin-top: 0px;
+    font-size: 1.2rem;
+    font-weight: 600;
 /*     box-shadow: 2px 2px 20px rgb(218, 218, 218); */
 }
 
-.tablaCarrito caption {
-    color: var(--colorTextoPrincipal);
-    padding: 20px 0px;
-    font-size: 1.5em;
-    font-weight: bolder;
+ .tituloTablaCarrito {
+    color: black;
+    padding: 0px 0px;
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-top: 30px;
 }
+
 .tablaCarrito thead th:nth-child(1) {
     width: 10%;
 }
@@ -495,15 +554,188 @@ boton:hover{
 }
 
 .tablaCarrito thead {
-    background-color: var(--colorFondoEncabezadoTabla);
-    color: var(--colorTextoEncabezadoTabla);
+    background-color: var(--naranja);
+    color: var(--blanco);
 }
+
 .tablaCarrito tbody td,th {
     padding: 10px 0px;
-    border: 1px solid rgb(163, 161, 161);
+    border: 1px solid var(--naranja);
     text-align: center;
 }
 
 .tablaCarrito tbody td:nth-child(2) {
     padding: 10px 10px;
 }
+
+.resumenCarrito {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+}
+
+.cardResumenCarrito {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    border: solid 1px rgb(163, 161, 161);
+    border-radius: 5px;
+}
+
+.tituloCardResumenCarrito {
+    display: flex;
+    background-color: var(--verde);
+    color: white;
+    font-size: 1.3rem;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0px;
+}
+
+.textoCardResumenCarrito {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.descripcionNosotros {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    gap: 30px;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+.pieDePagina {
+    bottom: 0px;
+}
+
+.fondoNaranja {
+    background-color: var(--naranja);
+}
+
+.fondoVerde {
+    background-color: var(--verde);
+}
+
+.fondoBlanco {
+    background-color: var(--blanco);
+}
+
+.fondoNegro {
+    background-color: var(--negro);
+}
+
+.fondoAzul {
+    background-color: var(--azul);
+}
+
+.fondoCeleste {
+    background-color: var(--celeste);
+}
+
+@media screen and (min-width: 601px) and (max-width: 1280px) {
+
+    .barraNavegacion {
+        display: none;
+    }
+
+    .hamburguesa {
+        display: block;
+        margin-left: 20px;
+        font-size: 1.4rem;
+        color: var(--blanco);
+    }
+
+    .logotipoHeader {
+        margin-right: 20px;
+        height: 50px;
+    }
+
+    .cabeceraPagina {
+        height: 65px;
+    }
+
+    .principal {
+        margin-top: 80px;
+    }
+       
+    .contenidoVentanaEmergente {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        left: 5%;
+        margin-top: 50px;
+        width: 90%;
+        background-color: #fff;
+        border-radius: 5px;
+        color: black;
+        align-self: center;
+        border: solid 1px #000000;
+    }
+
+    .contenidoVentana {
+        font-size: 1rem;
+        padding: 5px 15px;
+    }
+    
+    .textoTituloVentana {
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+    
+    .textoDescripcion {
+        font-weight: 400;
+    }
+    
+    .precioProductoVentana {
+        font-size: 1.1rem;
+    }
+
+    .descripcionNosotros {
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+        gap: 30px;
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+    }
+    
+    .titulo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 10px;
+        background-image: url("/img/fondoTitulo.avif");
+        background-size: cover;
+        width: 100%;
+        height: auto;
+    }
+
+    .cajaTitulo {
+        margin-top: 20px;
+    }
+    .imagenCajaTitulo {
+        height: 200px;
+        opacity: .8;
+        margin: 20px 0px;
+    }
+
+    .pieDePagina {
+        flex-direction: column;
+        height: auto;
+        gap: 20px;
+        text-align: center;
+        padding: 15px 0px;
+    }
+
+  }
