@@ -34,7 +34,7 @@ const mostrarPagina = (eleccion) => {
             break;
         case 'productos':
             var bloque = document.getElementById('itemProductos')
-            mostrarProductos('./db/productos.json','cajonProductos')
+            mostrarProductos('db/productos.json','cajonProductos')
             bloque.classList.toggle('ocultar')
             break;
         case 'recetas':
@@ -251,4 +251,4 @@ const alerta = (fondo, texto, tiempo) => {
       }, tiempo+1000);
 }
 
-mostrarProductos('./db/productos.json','cajonProductos')
+mostrarProductos('db/productos.json','cajonProductos')
