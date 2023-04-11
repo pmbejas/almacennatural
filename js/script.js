@@ -57,10 +57,13 @@ const mostrarProductos = (url, elemento) => {
             httpProductos.innerHTML = ""
             for (producto of datos) {
                 httpProductos.innerHTML += `
-                    <div class="card">
-                    <img class="cardFotoProducto pointer" onclick="mostrarDatosProducto(${producto.id})" src="${producto.foto}" alt="lechuga">
-                    <span class="cardNombreProducto pointer" onclick="mostrarDatosProducto(${producto.id})">${producto.nombre}</span>
-                    <span class="cardPrecioProducto">$ ${producto.precio}</span>
+                    <div class="card zoom">
+                        <img class="cardFotoProducto pointer" onclick="mostrarDatosProducto(${producto.id})" src="${producto.foto}" alt="lechuga">
+                        <span class="cardNombreProducto pointer" onclick="mostrarDatosProducto(${producto.id})">${producto.nombre}</span>
+                        <div class="pieCard">
+                            <span class="cardPrecioProducto">$ ${producto.precio}</span>
+                            <span class="cardMas pointer" onclick="mostrarDatosProducto(${producto.id})">mas datos</span>
+                        </div>
                     </div>
                 `
                 productos.push(producto)
