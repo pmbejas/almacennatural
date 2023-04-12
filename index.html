@@ -13,9 +13,7 @@
     <header>
         <div class="cabeceraPagina">
             <i class="bi bi-list hamburguesa pointer" onclick="mostrarMenuMovil()"></i>
-            <div>
-                <img class="logotipoHeader" src="./img/logoBlancoHorizontal.svg" alt="logo de la empresa">
-            </div>
+            <img class="logotipoHeader" src="./img/logoBlancoHeader.svg" alt="logo de la empresa">
             <nav class="barraNavegacion">
                 <span class="itemMenu" onclick="mostrarPagina('inicio')">INICIO</span>
                 <span class="itemMenu" onclick="mostrarPagina('nosotros')">NOSOTROS</span>
@@ -42,7 +40,7 @@
                         <span class="textoCajaSubtitulo">Alimentos Frescos y Agroecológicos</span>
                     </div>
                     <div class="cajaTitulo2">
-                        <img class="imagenCajaTitulo" src="./img/logoBlanco2.svg" alt="">
+                        <img class="imagenCajaTitulo" src="./img/logoBlancoFooter.svg" alt="">
                     </div>
                 </div>
                 <p class="textoPresentacion">Somos un alamacén de productos orgánicos y agroecológicos. Cada día te acercamos frutas, verduras,
@@ -84,17 +82,38 @@
                             <span class="textoCajaSubtitulo">Alimentos Frescos y Agroecológicos</span>
                         </div>
                         <div class="cajaTitulo2">
-                            <img class="imagenCajaTitulo" src="./img/logoBlanco2.svg" alt="">
+                            <img class="imagenCajaTitulo" src="../img/logoBlancoFooter.svg" alt="">
                         </div>
                     </div>
                     <p class="textoPresentacion">Somos un alamacén de productos orgánicos y agroecológicos. Cada día te acercamos frutas, verduras,
                         hortalizas, panificados, bebidas, elementos de higiene personal, plantas, semillas y productos para hacer tu propia huerta.
                     </p>
-                    <div class="descripcionNosotros">
+                    <!-- <div class="descripcionNosotros">
                         <img src="./img/logoColor2.svg" alt="">
                         <p>
                             Cupcake ipsum dolor sit amet candy canes pie bear claw. Marzipan carrot cake powder pudding lollipop sweet. Dessert apple pie apple pie cake chocolate bar. Tart marzipan cookie cake croissant cake. Jelly-o gummi bears candy carrot cake topping fruitcake caramels tart donut. Soufflé dessert powder candy canes cookie tootsie roll pastry cheesecake tootsie roll. Dessert caramels apple pie icing toffee tart danish croissant. Sugar plum sweet powder toffee brownie. Marshmallow caramels soufflé danish cotton candy lollipop pastry pudding. Biscuit cookie chocolate bar sweet roll sugar plum jelly gummies wafer. I love lemon drops jelly beans tart apple pie cupcake donut soufflé halvah. Tiramisu sweet roll cake gummies I love chocolate topping marzipan I love.
                         </p>
+                    </div> -->
+                    <div class="contenedorCajaNosotros">
+                        <div class="cajaNosotros">
+                            <img src="../img/camion.svg" class="imgCajonNosotrosInicio" alt="">
+                            <h1>Hacemos entgregas a cada rincón del país</h1>
+                            <p>El costo de envío será de $500,00 para compras menores a $1.000,00. En caso de superar dicho importe, el costo de envío será sin cargo.</p>
+                            <p>Los pedidos dentro de CABA, se entregan de martes a sábados.</p>
+                            <p>En caso de ser en el interior, lo despachamos en la Agencia de su preferencia.</p>
+                        </div>
+
+                        <div class="cajaNosotros">
+                            <img src="../img/bolsaReciclable.svg" class="imgCajonNosotrosCentro" alt="">
+                            <h1>Responsabilidad social</h1>
+                            <p>Estamos en la constante búsqueda de productos bio degradables para contribuir al menor impacto posible en el Medio Ambiente.</p>
+                        </div>
+                        <div class="cajaNosotros">
+                            <img src="../img/vegetales.svg" class="imgCajonNosotrosFinal" alt="">
+                            <h1>Producción Nacional</h1>
+                            <p>Apostamos a la elaboración nacional brindando puestos de trabajo para elaboración, producción, control de calidad y envasado.</p>
+                            <p>Contamos con estrictas normas sanitarias que nos permite seguir creciendo a la medida de tus necesidades y gustos.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -132,23 +151,29 @@
         
     </main>
 
-    <footer class="pieDePagina">
+    <footer>
+        <div class="pieDePagina">
+            <div class="logoPie">
+                <img class="imgLogoPie" src="./img/logoBlancoFooter.svg" alt="">
+            </div>
+            <div class="redesPie">
+                <span class="textoPie">Seguinos en nuestras redes</span>
+                <div class="iconoRedesPie">
+                    <img src="../img/pablo.jpg" class="imgAvatar" alt="Pablo Bejas">
+                    <img src="../img/alejandro.jpeg" class="imgAvatar" alt="Alejandro Collavino">
+                    <img src="../img/marianela.jpg" class="imgAvatar" alt="Marianela Morzan">
+                    <!-- 
+                    <i class="bi bi-facebook textoPie"></i>
+                    <i class="bi bi-instagram textoPie"></i>
+                    <i class="bi bi-twitter textoPie"></i>
+                    <i class="bi bi-youtube textoPie"></i>  
+                    -->
+                </div>
+            </div>
+        </div>
         <div class="infoPie">
-            <p class="textoInfoPie">Esta página fue creada para ser presentada en el curso Argentina Programa.</p>
             <p class="textoInfoPie">Bejas, Pablo - Collavino, Alejandro - Morzan, Marianela</p>
             <p class="textoInfoPie">Comision 192 - Grupo 12</p>
-        </div>
-        <div class="logoPie">
-            <img class="imgLogoPie" src="./img/logoBlanco.svg" alt="">
-        </div>
-        <div class="redesPie">
-            <span class="textoPie">Seguinos en nuestras redes</span>
-            <div>
-                <i class="bi bi-facebook textoPie"></i>
-                <i class="bi bi-instagram textoPie"></i>
-                <i class="bi bi-twitter textoPie"></i>
-                <i class="bi bi-youtube textoPie"></i>                
-            </div>
         </div>
     </footer>
     <script src="./js/script.js"></script>

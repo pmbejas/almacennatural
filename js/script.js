@@ -5,6 +5,7 @@ let carrito = {
     totalPagar: 0.00,
     listadoProductos: []
 }
+const carritoLocal = window.localStorage;
 
 const mostrarMenuMovil = () => {
     const menu = document.getElementById('barraNavegacionMovil')
@@ -84,6 +85,16 @@ const toggleVentana = () => {
     globo.classList.toggle('ocultar')
 }
 
+function guardarCarritoLocal () {
+    carritoLocal.setItem('carrito', JSON.stringify(carrito));
+}
+
+function cargarCarritoLocal () {
+    if (carritoLocal.getItem('carrito') !== null) {
+            carrito = JSON.parse(carritoLocal.getItem('carrito'));
+    }
+}
+
 const CarritoCompras = (accion) => {
     if (accion=="mostrar") {
         toggleVentana()
@@ -155,7 +166,8 @@ const eliminarItemCarrito = (id) => {
         carrito.listadoProductos.splice(indice, 1);
     }
     CarritoCompras('actualizar')
-    alerta('celeste','Se ha Eliminado el Producto del Carrito', 2500)
+    guardarCarritoLocal()
+    alerta('celeste','Se ha Eliminado el Producto del Carrito', 2500);
 }
 
 const agregarProductoCarrito = (id, cantidad, nombre, precio) => {
@@ -178,6 +190,7 @@ const agregarProductoCarrito = (id, cantidad, nombre, precio) => {
         carrito.totalPagar += precio * parseInt(inputCantidad.value)
         carrito.listadoProductos.push(producto)
     }
+    guardarCarritoLocal()
     alerta('verde','Se agregó el prducto al carrito de compras. Muchas Gracias', 2500)
 }
 
@@ -254,4 +267,7 @@ const alerta = (fondo, texto, tiempo) => {
       }, tiempo+1000);
 }
 
-mostrarProductos('db/productos.json','cajonProductos')
+document.addEventListener('DOMContentLoaded', () => {
+    cargarCarritoLocal()
+    mostrarProductos('db/productos.json','cajonProductos')
+});
