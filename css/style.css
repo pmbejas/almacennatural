@@ -70,6 +70,7 @@ header {
 .logotipoHeader {
     margin-left: 100px;
     height: 90px;
+    width: 326px;
 }
 
 .principal {
@@ -175,6 +176,7 @@ h1 {
 
 .imagenCajaTitulo {
     height: 90%;
+    width: 35vw;
     opacity: .8;
     margin-right: 50px;
 }
@@ -327,6 +329,7 @@ footer {
 
 .imgLogoPie {
     height: 130px;
+    width: 245px;
 }
 .textoPie {
     color: white;
@@ -758,6 +761,7 @@ boton:hover{
     .logotipoHeader {
         margin-right: 20px;
         height: 50px;
+        width: 185px;
     }
 
     .cabeceraPagina {
