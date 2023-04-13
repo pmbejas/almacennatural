@@ -805,6 +805,21 @@ boton:hover{
         font-size: 1.1rem;
     }
 
+    .titulo {
+        width: 90%;
+    }
+
+    .textoCajaTitulo {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+    
+    .textoCajaSubtitulo {
+        font-size: 1.2rem;
+        font-weight: 300;
+    }
+    
+
     .descripcionNosotros {
         display: flex;
         flex-direction: column;
@@ -861,12 +876,13 @@ boton:hover{
     .contenedorCajaNosotros {
         display: flex;
         flex-direction: column;
-        width: 100%;
+        align-items: center;
+        width: 100vw;
         gap: 30px;
     }
 
     .cajaNosotros {
-     width: 95%;
+     width: 85vw;
     }
 
     .contenedorCajaNosotros p {
