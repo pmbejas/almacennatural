@@ -339,10 +339,6 @@ footer {
     margin: 0px;
 }
 
-.infoPie {
-    margin-bottom: 20px;
-}
-
 .ventanaAlert {
     display: block;
     position: fixed;
@@ -694,7 +690,7 @@ boton:hover{
     flex-direction: row;
     justify-content: space-evenly;
     bottom: 0px;
-    margin-top: 20px;
+    padding: 25px 0px;
     width: 100%;
 }
 
