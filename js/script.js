@@ -266,6 +266,57 @@ const alerta = (fondo, texto, tiempo) => {
         ventana.classList.add('ocultar');
       }, tiempo+1000);
 }
+const enviarMail = (tipo, datos) => {
+    if (tipo=='contacto') {
+        fetch('https://api.sendgrid.com/v3/mail/send', {
+            method: 'POST',
+            headers: {
+              'Authorization': 'Bearer API_KEY',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                personalizations: [
+                {
+                    to: [
+                    {
+                        email: datos.email
+                    }]
+                }],
+                from: {
+                    email: 'pmbejas@gmail.com'
+                },
+                subject: 'Formulario de Contacto de '+ datos.nombre + ' ' + datos.apellido,
+                content: [
+                {
+                    type: 'text/plain',
+                    value: `Nombre y apellido : ${datos.nombre} ${datos.apellido}
+                        Email: ${datos.email}
+                        Mensaje: ${datos.mensaje}
+                        Desea Ser contactado via telefónica?: ${datos.opcionTelefono}
+                        Numero de Telefono: ${telefono}
+                        `
+                }]
+            })
+        }).then(response => {
+                console.log(response.status);
+        }).catch(error => {
+                console.error(error);
+        });
+    }
+}
+
+const formulario = document.getElementById('formularioContacto');
+
+formulario.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (!formulario.checkValidity()) {
+        alerta('naranja','Por favor, complete todos los campos requeridos.', 3000);
+    } else {
+        enviarMail('contacto', formulario)
+        alerta('verde','se ha enviado su consulta con éxito', 3000);
+    }
+});
+
 
 document.addEventListener('DOMContentLoaded', () => {
     cargarCarritoLocal()
