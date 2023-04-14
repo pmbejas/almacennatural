@@ -861,6 +861,13 @@ boton:hover{
     .titulo {
         width: 85vw;
         justify-content: center;
+        align-items: center;
+    }
+    .cajonNosotros {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .textoCajaTitulo {
