@@ -88,12 +88,6 @@
                     <p class="textoPresentacion">Somos un alamacén de productos orgánicos y agroecológicos. Cada día te acercamos frutas, verduras,
                         hortalizas, panificados, bebidas, elementos de higiene personal, plantas, semillas y productos para hacer tu propia huerta.
                     </p>
-                    <!-- <div class="descripcionNosotros">
-                        <img src="./img/logoColor2.svg" alt="">
-                        <p>
-                            Cupcake ipsum dolor sit amet candy canes pie bear claw. Marzipan carrot cake powder pudding lollipop sweet. Dessert apple pie apple pie cake chocolate bar. Tart marzipan cookie cake croissant cake. Jelly-o gummi bears candy carrot cake topping fruitcake caramels tart donut. Soufflé dessert powder candy canes cookie tootsie roll pastry cheesecake tootsie roll. Dessert caramels apple pie icing toffee tart danish croissant. Sugar plum sweet powder toffee brownie. Marshmallow caramels soufflé danish cotton candy lollipop pastry pudding. Biscuit cookie chocolate bar sweet roll sugar plum jelly gummies wafer. I love lemon drops jelly beans tart apple pie cupcake donut soufflé halvah. Tiramisu sweet roll cake gummies I love chocolate topping marzipan I love.
-                        </p>
-                    </div> -->
                     <div class="contenedorCajaNosotros">
                         <div class="cajaNosotros">
                             <img src="./img/camion.svg" class="imgCajonNosotrosInicio" alt="">
@@ -124,7 +118,58 @@
                     Contacto
                 </div>
                 <div class="cajonContacto">
-                    Dejanos tu consulta a través del formulario.
+                    <p>Complete este Formulario de Consulta para obtener información adicional sobre nuestros productos o servicios. Lo contactaremos a la brevedad por teléfono o email. </p>
+                    <form id="formularioContacto" method="POST">
+                        <div class="grupoCampos">
+                            <div class="lineaFormulario width50">
+                                <label for="nombre">Nombre:</label>
+                                <input class="campo" type="text" id="nombre" name="nombre" required>
+                            </div>
+                            <div class="lineaFormulario width50">
+                                <label for="apellido">Apellido:</label>
+                                <input class="campo" type="text" id="apellido" name="apellido" required>
+                            </div>
+                        </div>
+                        <div class="lineaFormulario">
+                            <label for="email">Correo electrónico:</label>
+                            <input class="campo" type="email" id="email" name="email" required>
+                        </div>
+                        <div class="lineaFormulario">
+                            <p>Por favor, sea específico acerca de la duda que quiere enviar a través de este Formulario de Consulta, de forma tal que podamos contactarlo rápidamente con la información que necesita. Le agradecemos su tiempo.</p>
+                        </div>
+                        <div class="lineaFormulario">
+                            <label for="tipoConsulta">Motivo de la Consulta</label>
+                            <select class="campo" name="tipoConsulta" id="tipoConsulta">
+                                <option value="1">Compra de Productos</option>
+                                <option value="2">Envio del Pedido</option>
+                                <option value="3">Formas de Pago</option>
+                                <option value="4">Pedidos Especiales</option>
+                                <option value="5">Otros</option>
+                            </select>
+                        </div>
+                        <div class="lineaFormulario">
+                            <label for="mensaje">Mensaje:</label>
+                            <textarea class="campo campoTextarea" id="mensaje" name="mensaje" required></textarea>
+                        </div>
+                        <div class="lineaFormulario">
+                            <label for="opcionTelefono">¿Desea ser contactado telefónicamente?</label>
+                            <div class="grupoCampo">
+                                <input type="radio" id="opcion1" name="option" value="1">
+                                <label for="opcion1">Si</label><br>
+                            </div>
+                            <div class="grupoCampo">
+                                <input type="radio" id="opcion2" name="option" value="2">
+                                <label for="opcion2">No</label><br>
+                            </div>
+                        </div>
+                        <div class="lineaFormulario">
+                            <label for="telefono">Teléfono</label>
+                            <input class="campo" type="number" id="telefono" name="telefono" required>
+                        </div>
+                        <div class="lineaFormulario">
+                            <button class="boton btnAgregar" type="submit">Enviar consulta</button>
+                        </div>
+                      </form>
                 </div>
             </div>
         </div>
