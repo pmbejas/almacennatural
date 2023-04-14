@@ -58,7 +58,7 @@ const mostrarProductos = (url, elemento) => {
             httpProductos.innerHTML = ""
             for (producto of datos) {
                 httpProductos.innerHTML += `
-                    <div class="card zoom">
+                    <div class="card">
                         <img class="cardFotoProducto pointer" onclick="mostrarDatosProducto(${producto.id})" src="${producto.foto}" alt="lechuga">
                         <span class="cardNombreProducto pointer" onclick="mostrarDatosProducto(${producto.id})">${producto.nombre}</span>
                         <div class="pieCard">

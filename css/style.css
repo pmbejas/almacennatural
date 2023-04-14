@@ -9,7 +9,8 @@
     --blanco: rgb(255, 255, 255);
     --negro: rgb(0, 0, 0);;
     --azul: rgb(20, 59, 143);;
-    --celeste: rgb(70, 156, 255);;
+    --celeste: rgb(70, 156, 255);
+    --color-texto-menu: rgb(255,255,255);
 }
 
 body {
@@ -18,13 +19,13 @@ body {
     align-items: center;
     justify-content: center;
     margin: 0;
-    width: 100%;
+    width: 100vw;
 }
 
 header {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 100vw;
 }
 
 .cabeceraPagina {
@@ -33,7 +34,7 @@ header {
     align-items: center;
     justify-content: space-between;
     background-color: var(--verde);
-    width: 100%;
+    width: 100vw;
     height: 120px;
     font-family: 'Hind:@600', sans-serif;
     padding: 0px;
@@ -77,7 +78,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: 100vw;
     margin: 0;
     margin-top: 135px;
     padding: 0;
@@ -88,7 +89,7 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 95%;
+    width: 85vw;
 }
 
 h1 {
@@ -102,18 +103,17 @@ h1 {
     justify-content: center;
     gap: 30px;
     margin: 30px 0px;
-    width: 100vw;
+    width: 100%;
 }
 
 .cajonProductos {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center;
     justify-content: center;
-    gap: 30px;
     margin: 30px 0px;
-    align-items: center;
-    width: 100vw;
+    width: 100%;
 }
 
 .cajonContacto {
@@ -123,7 +123,7 @@ h1 {
     justify-content: center;
     gap: 30px;
     margin: 30px 0px;
-    width: 100vw;
+    width: 100%;
 }
 
 .titulo {
@@ -189,14 +189,15 @@ h1 {
     margin-bottom: 20px;
 }
 .itemMenu {
-    color: white;
+    color: var(--color-texto-menu);
     font-size: 1.2rem;
+    opacity: .8
 }
 
 
 .itemMenu:hover {
-    color: #8b8b8b;
     cursor: pointer;
+    opacity: 1;
 }
 
 .pointer:hover {
@@ -212,11 +213,12 @@ h4 {
     color: black;
 }
 
+
 .caja {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 100vw;
     height: 70px;
     background-color: var(--verde);
     color: white;
@@ -241,8 +243,14 @@ h4 {
     border-radius: 5px;
     padding: 10px 15px;
     width: 250px;
-    box-shadow: 0px 0px 10px 3px #858585;
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.137);
+    transition: box-shadow .2s ease-in-out;
 }
+
+.card:hover {
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.507);
+}
+
 
 .cardMas {
     text-decoration: underline;
@@ -810,17 +818,19 @@ boton:hover{
     }
 
     .titulo {
-        width: 90%;
+        width: 85vw;
     }
 
     .textoCajaTitulo {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         font-weight: 600;
+        text-align: center;
     }
     
     .textoCajaSubtitulo {
         font-size: 1.2rem;
         font-weight: 300;
+        text-align: center;
     }
     
 
@@ -833,17 +843,6 @@ boton:hover{
         margin-bottom: 20px;
     }
     
-    .titulo {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        margin-top: 10px;
-        background-image: url("../img/fondoTitulo.jpg");
-        background-size: cover;
-        width: 100%;
-        height: auto;
-    }
 
     .cajaTitulo {
         margin-top: 20px;
