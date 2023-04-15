@@ -14,6 +14,10 @@
         <div class="cabeceraPagina">
             <i class="bi bi-list hamburguesa pointer" onclick="mostrarMenuMovil()"></i>
             <img class="logotipoHeader" src="./img/logoBlancoHeader.svg" alt="logo de la empresa">
+            <div class="cajonBuscar">
+                <input type="text" class="campoBuscar" name="campoBuscar" id="campoBuscar" placeholder="Ingrese el nombre del producto" onfocosout="buscarProducto('campoBuscar')">
+                <i class="bi bi-search botonBuscar" onclick="buscarProducto('campoBuscar')"></i>
+            </div>
             <nav class="barraNavegacion">
                 <span class="itemMenu" onclick="mostrarPagina('inicio')">INICIO</span>
                 <span class="itemMenu" onclick="mostrarPagina('nosotros')">NOSOTROS</span>
@@ -26,6 +30,10 @@
             <span class="itemMenu" onclick="mostrarPagina('inicio'); mostrarMenuMovil()">INICIO</span>
             <span class="itemMenu" onclick="mostrarPagina('nosotros'); mostrarMenuMovil()">NOSOTROS</span>
             <span class="itemMenu" onclick="mostrarPagina('productos'); mostrarMenuMovil()">PRODUCTOS</span>
+            <div class="cajonBuscarMovil">
+                <input type="text" class="campoBuscar" name="campoBuscarMovil" id="campoBuscarMovil" placeholder="Ingrese el nombre del producto" onfocosout="buscarProducto('campoBuscarMovil')">
+                <i class="bi bi-search botonBuscar" onclick="buscarProducto('campoBuscarMovil')"></i>
+            </div>
             <span class="itemMenu" onclick="mostrarPagina('recetas'); mostrarMenuMovil()">RECETAS</span>
             <span class="itemMenu" onclick="mostrarPagina('contacto'); mostrarMenuMovil()">CONTACTO</span>
         </nav>  

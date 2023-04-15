@@ -194,6 +194,25 @@ const agregarProductoCarrito = (id, cantidad, nombre, precio) => {
     alerta('verde','Se agregó el prducto al carrito de compras. Muchas Gracias', 2500)
 }
 
+const buscarProducto = (seccion) => {
+    const texto = document.getElementById(seccion)
+    const existeProducto = productos.filter(producto => producto.nombre.toUpperCase().includes(texto.value.toUpperCase()))
+    let httpProductos = document.getElementById('cajonProductos')
+    httpProductos.innerHTML = ""
+        for (producto of existeProducto) {
+            httpProductos.innerHTML += `
+                <div class="card">
+                    <img class="cardFotoProducto pointer" onclick="mostrarDatosProducto(${producto.id})" src="${producto.foto}" alt="lechuga">
+                    <span class="cardNombreProducto pointer" onclick="mostrarDatosProducto(${producto.id})">${producto.nombre}</span>
+                    <div class="pieCard">
+                        <span class="cardPrecioProducto">$ ${producto.precio}</span>
+                        <span class="cardMas pointer" onclick="mostrarDatosProducto(${producto.id})">mas datos</span>
+                    </div>
+                </div>
+            `
+        } 
+}
+
 const mostrarDatosProducto = (id) => {
     toggleVentana()
     const producto = productos.find((productoBuscado) => {
@@ -290,4 +309,14 @@ formulario.addEventListener('submit', (event) => {
 document.addEventListener('DOMContentLoaded', () => {
     cargarCarritoLocal()
     mostrarProductos('db/productos.json','cajonProductos')
+
+    var input = document.getElementById('campoBuscar');
+
+    input.addEventListener("keypress", (evento) => {
+        if (evento.key === "Enter") {
+            evento.preventDefault();
+            buscarProducto('campoBuscar')
+        }
+    });
+
 });
