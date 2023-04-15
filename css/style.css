@@ -939,11 +939,22 @@ boton:hover{
     .cajonProductos {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 10px;
     }
 
      .card {
         width: 85%px;
         padding: 5px 5px;
+    }
+
+    .cardNombreProducto {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-top: 5px;
+    }
+
+    .cardPrecioProducto {
+        font-size: 1.1rem;
     }
     
     .cajonNosotros {
