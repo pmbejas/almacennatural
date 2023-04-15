@@ -57,10 +57,10 @@
     },
     {
         "id":"9",
-        "foto":"./img/hakusay.png",
-        "nombre":"Hakusay",
+        "foto":"./img/akusay.png",
+        "nombre":"Akusay",
         "precio":"550",
-        "beneficios": "El hakusai, es conocido como el repollo chino o la col asiática. Su aspecto es similar al de un repollo. Puede consumirse crudo, en ensaladas o cocido en variedad de preparaciones. Una de las formas más sabrosas de comerlo es combinarlo en un plato con carnes, o en un salteado de vegetales con jengibre y salsa de soya."
+        "beneficios": "El akusai, es conocido como el repollo chino o la col asiática. Su aspecto es similar al de un repollo. Puede consumirse crudo, en ensaladas o cocido en variedad de preparaciones. Una de las formas más sabrosas de comerlo es combinarlo en un plato con carnes, o en un salteado de vegetales con jengibre y salsa de soya."
     },
     {
         "id":"10",
