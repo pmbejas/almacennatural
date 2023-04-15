@@ -93,6 +93,7 @@ header {
 
 h1 {
     color: var(--verde);
+    text-align: center;
 }
 
 .cajonRecetas {
