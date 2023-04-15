@@ -223,21 +223,21 @@ const mostrarDatosProducto = (id) => {
         <form action="">
             <div class="tituloVentana" >
                 <span class="textoTituloVentana">Detalle del Producto</span>
+                <i class="bi bi-x-lg pointer botonCerrarVentana" id="botonCancelar" onclick="toggleVentana()" ></i>
             </div>
             <div class="contenidoVentana">
                 <span class="nombreProductoVentana">${producto.nombre}</span>
                 <div class="imagenDescripcion">
                     <img class="imagenProductoVentana" src="${producto.foto}" alt="">
-                    <p class="textoDescripcion">${producto.beneficios}</p>
+                    <div class="grupoElementosVentana">
+                        <p class="textoDescripcion">${producto.beneficios}</p>
+                        <div class="cantidadCarrito">
+                            <p class="precioProductoVentana" ><b>Precio: </b>$${producto.precio}</p>
+                            <input type="number" class="campo" min="1" max="10" id="cantidadId${producto.id}" value="1" style="text-align: center; font-weight: 600;">
+                            <input type="button" id="botonAgregar" class="boton btnAgregar pointer" onclick="agregarProductoCarrito(${producto.id},1,'${producto.nombre}',${producto.precio})" value="Agregar al Carrito">
+                        </div>
+                    </div>
                 </div>
-                <div class="cantidadCarrito">
-                    <p class="precioProductoVentana" ><b>Precio: </b>$${producto.precio}</p>
-                    <input type="number" class="campo" min="1" max="10" id="cantidadId${producto.id}" value="1" style="text-align: center; font-weight: 600;">
-                    <input type="button" id="botonAgregar" class="boton btnAgregar pointer" onclick="agregarProductoCarrito(${producto.id},1,'${producto.nombre}',${producto.precio})" value="Agregar al Carrito">
-                </div>
-            </div>
-            <div class="pieVentana">
-                <input type="button" id="botonCancelar" class="boton btnCerrar pointer" onclick="toggleVentana()" value="Cerrar">
             </div>
         </form>
     ` 
@@ -286,32 +286,11 @@ const alerta = (fondo, texto, tiempo) => {
       }, tiempo+1000);
 }
 
-const formulario = document.getElementById('formularioContacto');
-
-formulario.addEventListener('submit', (event) => {
-     event.preventDefault();
-    if (!formulario.checkValidity()) {
-        alerta('naranja','Por favor, complete todos los campos requeridos.', 3000);
-    } else {
-        if (!isNumeric(formulario.telefono)){
-            if (formulario.opcionTelefono > 0 ) {
-                alerta('verde','se ha enviado su consulta con éxito', 3000);
-            } else {
-                alerta('naranja','Por favor, indique si quiere ser contactado via Telefónica.', 3000);
-            }
-        } else {
-            alerta('naranja','Por favor, ingrese solo numeros en el numero de teléfono.', 3000);
-        }
-    }
-});
-
-
 document.addEventListener('DOMContentLoaded', () => {
     cargarCarritoLocal()
     mostrarProductos('db/productos.json','cajonProductos')
 
     var input = document.getElementById('campoBuscar');
-
     input.addEventListener("keypress", (evento) => {
         if (evento.key === "Enter") {
             evento.preventDefault();
@@ -319,4 +298,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    const formulario = document.getElementById('formularioContacto');
+    formulario.addEventListener('submit', (event) => {
+        event.preventDefault();
+        if (!formulario.checkValidity()) {
+            alerta('naranja','Por favor, complete todos los campos requeridos.', 3000);
+        } else {
+            if (!isNaN(formulario.telefono.value)){
+                if (formulario.opcionTelefono.value > 0 ) {
+                    alerta('verde','se ha enviado su consulta con éxito', 3000);
+                } else {
+                    alerta('naranja','Por favor, indique si quiere ser contactado via Telefónica.', 3000);
+                }
+            } else {
+                alerta('naranja','Por favor, ingrese solo numeros en el "numero de teléfono".', 3000);
+            }
+        }
+    });
 });

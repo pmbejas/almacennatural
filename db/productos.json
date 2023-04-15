@@ -4,55 +4,76 @@
         "foto":"./img/lechuga.png",
         "nombre":"Lechuga",
         "precio":"450",
-        "beneficios": "Entre otros aspectos, podemos indicar que es rica en fibra, lactucina, pectina y betacarotenos; vitaminas como: B1, B2 y B3, A, E y C; así como minerales tales como el potasio, sodio, magnesio y calcio. Por todo lo indicado hasta este punto, su alto contenido en hierro ayuda a combatir la anemia, el cansancio y la fatiga. Es ideal como remedio casero para la gripe y para los resfriados, ya que fortalece las vías respiratorias. En estos casos, una buena ensalada cuyo ingrediente principal sea la lechuga orgánica puede ayudar, y mucho."
+        "beneficios": "Entre otros aspectos, podemos indicar que es rica en fibra, lactucina, pectina y betacarotenos; vitaminas como: B1, B2 y B3, A, E y C; así como minerales tales como el potasio, sodio, magnesio y calcio. Por todo lo indicado hasta este punto, su alto contenido en hierro ayuda a combatir la anemia, el cansancio y la fatiga."
     },
     {
         "id":"2",
         "foto":"./img/rucula.png",
         "nombre":"Rúcula",
         "precio":"150",
-        "beneficios": ""
+        "beneficios": "La rúcula es un vegetal verde oscuro rico en vitaminas A y C y en compuestos fenólicos, como luteína y zeaxantina, con propiedades antioxidantes y antiinflamatorias que ayudan a mejorar la salud de los ojos, a controlar los niveles de azúcar en la sangre y a prevenir el desarrollo de enfermedades cardiovasculares."
     },
     {
         "id":"3",
         "foto":"./img/tomates.png",
         "nombre":"Tomate",
         "precio":"600",
-        "beneficios": ""
+        "beneficios": "El tomate contiene pocas calorías. Su sabor agridulce es debido a una pequeña cantidad de azúcares simples y a algunos ácidos orgánicos, como el cítrico y el málico, responsables de que resulte apetitoso y digestivo."
     },
     {
         "id":"4",
         "foto":"./img/rabanitos.png",
         "nombre":"Rabanito",
         "precio":"200",
-        "beneficios": ""
+        "beneficios": "Contienen vitaminas del grupo B, C, minerales como el potasio, yodo, magnesio o hierro, fibra, fitoquímicos como los glucosinolatos o los indoles y agua. Los rabanitos tienen propiedades inmunoestimulantes, antimicrobianas, coléricas, antisepticas, carminativas, antianémicas, antiinflamatorias, depurativas, antioxidantes, expectorantes, diuréticas, colagogas, hepatoprotectoras y digestivas."
     },
     {
         "id":"5",
         "foto":"./img/clavelinas.png",
         "nombre":"Clavelina",
         "precio":"800",
-        "beneficios": ""
+        "beneficios": "Es una planta originaria de china y sus flores tienen varios colores. Tiene el tamaño perfecto para poder cultivarse durante toda su vida en maceta, aunque también puede estar en el jardín sin problema."
     },
     {
         "id":"6",
         "foto":"./img/milanesas.png",
         "nombre":"Milanesa de Soja",
         "precio":"400",
-        "beneficios": ""
+        "beneficios": "Están realizadas con soja agroecológica y vienen en paquetes de seis. La proteína de soja reduce los niveles de colesterol y triglicéridos en la sangre, y disminuye la tensión arterial en los pacientes con hipertensión. Es una importante fuente de proteína vegetal de alta calidad y un alimento con un alto valor nutricional."
     },
     {
         "id":"7",
         "foto":"./img/gazanias.png",
         "nombre":"Gazanias",
         "precio":"800",
-        "beneficios": ""
+        "beneficios": "La gazania es una planta muy dura que no requiere de muchos cuidados. Está casi todo el año en flor, sobre todo, en climas cálidos, aunque lo normal es que florezca de primavera-finales de verano."
     },
     {
         "id":"8",
         "foto":"./img/masitas.png",
         "nombre":"Masitas Saladas",
         "precio":"600",
-        "beneficios": ""
-    }
+        "beneficios": "Son galletas marineras con harina integral, sin manteca y, si quieres, sin sal. Son una opción ideal si buscas comer saludable, bajar de peso o si eres diabético. Esto es gracias a la fibra que aporta la harina integral y al reemplazo de la materia grasa por aceite."
+    },
+    {
+        "id":"9",
+        "foto":"./img/Hakusay.png",
+        "nombre":"Akusay",
+        "precio":"550",
+        "beneficios": "El hakusai, es conocido como el repollo chino o la col asiática. Su aspecto es similar al de un repollo. Puede consumirse crudo, en ensaladas o cocido en variedad de preparaciones. Una de las formas más sabrosas de comerlo es combinarlo en un plato con carnes, o en un salteado de vegetales con jengibre y salsa de soya."
+    },
+    {
+        "id":"10",
+        "foto":"./img/remolacha.png",
+        "nombre":"Remolacha",
+        "precio":"350",
+        "beneficios": "Es una excelente fuente de ácido fólico, así como de vitamina C y potasio. También contiene una cantidad apreciable de fósforo y apenas aporta calorías. Otros nutrientes que se encuentran en cantidades no desdeñables son las vitaminas B1, B2, B3 y B6, y los minerales hierro y yodo."
+    },
+    {
+        "id":"11",
+        "foto":"./img/panCasero.png",
+        "nombre":"Pan Casero",
+        "precio":"500",
+        "beneficios": "Puede ser ingerido en el desayuno, almuerzo, merienda y cena. Aplica para cualquiera de las cuatro comidas de cada día y también puede ser parte de algún tentempié y colación. El pan casero es uno de los más requeridos en los hogares."
+    }   
 ]
