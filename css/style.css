@@ -630,13 +630,23 @@ boton:hover{
     position: fixed;
     bottom: 10%;
     right: 15px;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     background-color: white;
     border: solid 1px #919191;
     z-index: 5;
     border-radius: 50%;
     box-shadow: 5px 5px 5px #858585;
+    transition: background-color .5s ease-in-out;
+}
+
+.notificacionCarrito:hover {
+    background-color: var(--naranja);
+    color: white;
+}
+
+.notificacionCarrito:hover .iconoCarrito {
+    color: white;
 }
 
 .cantidadCarrito {
@@ -659,7 +669,8 @@ boton:hover{
 }
 .iconoCarrito {
     color: black;
-    font-size: 2.5rem;
+    font-size: 2rem;
+    transition: color .5s ease-in-out;
 }
 
 .carritoVacio {
@@ -682,37 +693,37 @@ boton:hover{
     border-collapse: collapse;
     border: 1px solid rgb(163, 161, 161);
     margin-top: 0px;
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: 1.1rem;
+    font-weight: 400;
 /*     box-shadow: 2px 2px 20px rgb(218, 218, 218); */
 }
 
  .tituloTablaCarrito {
     color: black;
     padding: 0px 0px;
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-weight: 600;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .tablaCarrito thead th:nth-child(1) {
-    width: 10%;
+    width: 9%;
 }
 
 .tablaCarrito thead th:nth-child(2) {
-    width: 50%;
+    width: 48%;
 }
 
 .tablaCarrito thead th:nth-child(3) {
-    width: 15%;
+    width: 17%;
 }
 
 .tablaCarrito thead th:nth-child(4) {
-    width: 15%;
+    width: 19%;
 }
 
 .tablaCarrito thead th:nth-child(5) {
-    width: 10%;
+    width: 7%;
 }
 
 .tablaCarrito thead {
@@ -721,13 +732,13 @@ boton:hover{
 }
 
 .tablaCarrito tbody td,th {
-    padding: 10px 0px;
+    padding: 2px 0px;
     border: 1px solid var(--naranja);
     text-align: center;
 }
 
 .tablaCarrito tbody td:nth-child(2) {
-    padding: 10px 10px;
+    padding: 2px 10px;
 }
 
 .resumenCarrito {
@@ -754,7 +765,7 @@ boton:hover{
     width: 100%;
     align-items: center;
     justify-content: center;
-    padding: 10px 0px;
+    padding: 5px 0px;
 }
 
 .textoCardResumenCarrito {
@@ -762,7 +773,7 @@ boton:hover{
     width: 100%;
     align-items: center;
     justify-content: center;
-    padding: 10px 0px;
+    padding: 5px 0px;
     font-size: 1.3rem;
     font-weight: 600;
 }
@@ -843,6 +854,16 @@ boton:hover{
         margin-left: 20px;
         font-size: 1.4rem;
         color: var(--blanco);
+    }
+
+    .notificacionCarrito {
+        width: 50px;
+        height: 50px;
+    }
+
+    .iconoCarrito {
+        color: black;
+        font-size: 1.5rem;
     }
 
     .cajonBuscar {
@@ -927,6 +948,22 @@ boton:hover{
         text-align: center;
     }
     
+    .resumenCarrito {
+        width: 100%;
+    }
+
+    .cardResumenCarrito {
+        width: 50%;
+    }
+    
+    .tituloCardResumenCarrito {
+        font-size: 1.2rem;
+    }
+    
+    .textoCardResumenCarrito {
+        font-size: 1.1rem;
+    }
+
     .textoCajaSubtitulo {
         font-size: 1.2rem;
         font-weight: 300;

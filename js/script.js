@@ -103,13 +103,14 @@ const CarritoCompras = (accion) => {
     ventana.innerHTML=`
             <div class="tituloVentana" >
                 <span class="textoTituloVentana">CARRITO DE COMPRAS</span>
-            </div>`
+                <i class="bi bi-x-lg pointer botonCerrarVentana" id="botonCancelar" onclick="toggleVentana()" ></i>
+            </div> `
     if (carrito.cantidadItems > 0) {
         ventana.innerHTML +=`
             <div class="contenidoVentana">
                 <div class="resumenCarrito">
                     <div class="cardResumenCarrito">
-                        <span class="tituloCardResumenCarrito">Cantidad de Items</span>
+                        <span class="tituloCardResumenCarrito">Items</span>
                         <span class="textoCardResumenCarrito">${carrito.cantidadItems}</span>
                     </div>
                     <div class="cardResumenCarrito">
@@ -118,7 +119,7 @@ const CarritoCompras = (accion) => {
                     </div>
                 </div>
                 <table class="tablaCarrito">
-                    <span class="tituloTablaCarrito">Detalle de Productos:</span>
+                    <span class="tituloTablaCarrito">Detalle de Productos</span>
                     <thead>
                         <tr>
                             <th scope="col">Cant.</th>
@@ -151,11 +152,6 @@ const CarritoCompras = (accion) => {
             </div>
         `
     }
-    ventana.innerHTML += `
-        <div class="pieVentana">
-            <input type="button" id="botonCancelar" class="boton btnCerrar pointer" onclick="toggleVentana()" value="Cerrar">
-        </div>
-        `
 }
 
 const eliminarItemCarrito = (id) => {
