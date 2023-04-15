@@ -107,7 +107,7 @@ h1 {
 
 .cajonProductos {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
     justify-items: center;
     justify-content: center;
@@ -231,7 +231,7 @@ h4 {
     border: solid 1px #d3d3d3;
     border-radius: 5px;
     padding: 10px 15px;
-    width: 250px;
+    width: 90%px;
     box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.137);
     transition: box-shadow .2s ease-in-out;
 }
@@ -935,6 +935,31 @@ boton:hover{
         justify-content: center;
         align-items: center;
     }
+    
+    .cajonProductos {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+/*     .card {
+        display: flex;
+        flex-direction: column;
+        border: solid 1px #d3d3d3;
+        border-radius: 5px;
+        padding: 10px 15px;
+        width: 90%px;
+        box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.137);
+        transition: box-shadow .2s ease-in-out;
+    }
+
+    .cardFotoProducto {
+        width: 100%;
+        border-radius: 5px;   
+    }
+ */
+
+    
+    
     .cajonNosotros {
         display: flex;
         flex-direction: column;
