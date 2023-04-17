@@ -34,7 +34,6 @@ const mostrarUsuarioActivo = () => {
         email.innerHTML = usuarioActivo.email;
         const foto = document.getElementById('iconoUsuarioActivo')
         foto.src = './img/usuarios/usuarioId'+usuarioActivo.id+'.jpg'
-
     } else {
         toggleElemento('iconoUsuarioActivo', 'add')
         toggleElemento('iconoUsuarioInactivo', 'remove')
@@ -104,6 +103,7 @@ const identificarse = () => {
                     }
                     toggleVentana()
                     mostrarUsuarioActivo()
+                    cambioScreenSize()
                     alerta('celeste','Acceso Correcto', 2000)
                 } else {
                     alerta('rojo','Contraseña Incorrecta', 2000)
@@ -426,7 +426,7 @@ const cambioScreenSize = () => {
     agregarHTML.innerHTML = `
         <img class="fotoUsuario pointer" id="iconoUsuarioActivo" src="" alt="" onclick="toggleElemento('cardUsuario','toggle')">
         <div class="cardUsuario ocultar" id="cardUsuario">
-            <img class="cardFotoUsuario" src="./img/usuarios/usuarioId1.jpg" alt="">
+            <img class="cardFotoUsuario" src="./img/usuarios/usuarioId${usuarioActivo.id}.jpg" alt="">
             <h4 id="nombreUsuario"></h4>
             <span id="emailUsuario"></span>
             <div class="separador"></div>

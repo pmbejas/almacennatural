@@ -68,6 +68,14 @@ header {
     z-index: 3;
 }
 
+.grupoNav {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+
+}
+
 .hamburguesa {
     display: none;
 }
@@ -84,7 +92,6 @@ header {
     border-radius: 50%;
     width: 35px;
     height: 35px;
-    margin-left: 15px;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -509,7 +516,7 @@ footer {
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 20vw;
+    width: 50%;
 }
 
 .cajonBuscarMovil {
@@ -991,7 +998,7 @@ boton:hover{
 
     .usuarioMovil {
         display: block;
-        margin-right: 25px;
+        margin-right: 0px;
     }
 
     .notificacionCarrito {
