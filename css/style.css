@@ -10,7 +10,11 @@
     --negro: rgb(0, 0, 0);;
     --azul: rgb(20, 59, 143);;
     --celeste: rgb(70, 156, 255);
+    --rojo: rgb(117, 0, 0);
+    --rojoClaro: rgb(255, 91, 91);
     --color-texto-menu: rgb(255,255,255);
+    --tamanoCaja: calc(217px);
+    --ubicacionCaja: 200px;
 }
 
 body {
@@ -48,6 +52,7 @@ header {
     flex-direction: row;
     gap: 20px;
     margin-right: 100px;
+    align-items: center;
 }
 
 .barraNavegacionMovil {
@@ -71,6 +76,126 @@ header {
     margin-left: 100px;
     height: 90px;
     width: 326px;
+}
+
+.usuario {
+    display: block;
+    border: solid 1px rgba(255, 255, 255, 0.411);
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    margin-left: 15px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.usuarioMovil {
+    display: none;
+}
+
+
+.iconoUsuario {
+    color: var(--blanco);
+    font-size: 1.1rem;
+}
+
+.fotoUsuario {
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+}
+
+.cardUsuario {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    bottom: 0px;
+    right: var(--ubicacionCaja);
+    top: -5px;
+    width: var(--tamanoCaja);
+    z-index: 3;
+    background-color: rgb(48, 48, 48);
+    border: solid 1px rgba(0,0,0,0.675);
+    border-radius: 5px;
+    padding: 20px 10px;
+    color: var(--blanco);
+    gap: 0px;
+    font-size: 0.9rem;
+}
+
+.cardUsuario h4 {
+    color: white;
+    padding: 0px;
+    margin: 0px;
+}
+
+.cardFotoUsuario {
+    width: 100px;
+    height: 100px;
+    border: solid 1px rgba(0,0,0,0.675);
+    border-radius: 50%;
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: start;
+    width: 90%;
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+.itemUsuario {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: start;
+    padding: 3px 10px;
+    border-radius: 3px;
+    transition: background-color .1s ease-in-out;
+    font-size: 1rem;
+}
+
+.itemUsuario:hover {
+    background-color: #858585;
+}
+
+.login {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.formLogin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 30px;
+    border: solid 1px rgb(105, 105, 105);
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0);
+}
+
+.campoUsuario {
+    border-radius: 5px;
+}
+
+.campo:focus {
+    box-shadow: 0px 0px 5px rgb(0, 0, 0);
+}
+
+.separador {
+    width: 100%;
+    border: none;
+    height: 1px;
+    background: none;
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.705);
+    margin: 10px 0px;
 }
 
 .principal {
@@ -167,7 +292,7 @@ h1 {
 .imagenCajaTitulo {
     height: 90%;
     width: 35vw;
-    opacity: .8;
+    opacity: .9;
     margin-right: 50px;
 }
 
@@ -840,10 +965,17 @@ boton:hover{
     background-color: var(--celeste);
 }
 
+.fondoRojo {
+    background-color: var(--rojo);
+}
+
+.fondoRojoClaro {
+    background-color: var(--rojoClaro);
+}
 @media screen and (max-width: 1024px) {
 
     body {
-        width: 100%;
+        width: 100vw;
     }
     
     .barraNavegacion {
@@ -855,6 +987,11 @@ boton:hover{
         margin-left: 20px;
         font-size: 1.4rem;
         color: var(--blanco);
+    }
+
+    .usuarioMovil {
+        display: block;
+        margin-right: 25px;
     }
 
     .notificacionCarrito {
@@ -884,6 +1021,7 @@ boton:hover{
 
     .principal {
         margin-top: 80px;
+        width: 100vw;
     }
 
     .caja {
