@@ -218,6 +218,22 @@ function cargarCarritoLocal () {
     }
 }
 
+const eliminarCarrito = () => {
+    carrito = {
+        fecha: Date.now,
+        cantidadItems: 0,
+        totalPagar: 0.00,
+        listadoProductos: []
+    }
+    CarritoCompras('actualizar')
+    guardarCarritoLocal()
+}
+
+const enviarPedido = () => {
+    alerta('verde','Se ha enviado su pedido con éxito', 3000)
+    eliminarCarrito()
+}
+
 const CarritoCompras = (accion) => {
     if (accion=="mostrar") {
         toggleVentana()
@@ -255,6 +271,10 @@ const CarritoCompras = (accion) => {
                     <tbody id="tablaCarrito" id="tablaCarrito">
                     </tbody>
                 </table>
+                <div class="pieCarrito">
+                    <button class="boton fondoNaranja" type="submit" onclick="eliminarCarrito()">Eliminar Todo</button>
+                    <button class="boton fondoVerde" type="submit" onclick="enviarPedido()">Enviar Pedido</button>
+                </div>
             </div>
         ` 
         const tablaElementosCarrito = document.getElementById('tablaCarrito')

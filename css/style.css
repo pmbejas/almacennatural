@@ -734,8 +734,9 @@ footer {
     color: whitesmoke;
     opacity: 0.8;
     transition: 0.5s ease-in-out;
-    height: 50px;
-    font-size: 1.2rem;
+    height: 40px;
+    font-size: 1rem;
+    cursor: pointer;
 }
 
 .boton:hover{
@@ -754,6 +755,7 @@ footer {
 .btnGuardar {
     background-color: var(--colorBotonGuardar);
 }
+
 
 boton:hover{
     opacity: 1;
@@ -909,6 +911,14 @@ boton:hover{
     padding: 5px 0px;
     font-size: 1.3rem;
     font-weight: 600;
+}
+
+.pieCarrito {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    justify-content: center;
+    gap: 15px;
 }
 
 .descripcionNosotros {
