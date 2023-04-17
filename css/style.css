@@ -998,7 +998,7 @@ boton:hover{
 
     .usuarioMovil {
         display: block;
-        margin-right: 0px;
+        margin-right: 15px;
     }
 
     .notificacionCarrito {
@@ -1080,6 +1080,7 @@ boton:hover{
         width: 85vw;
         justify-content: center;
         align-items: center;
+        gap: 20px;
     }
     
     .cajonProductos {
