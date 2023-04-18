@@ -442,6 +442,7 @@ const cambioScreenSize = () => {
         agregarHTML = document.getElementById('usuarioMovil')
         agregarHTML.innerHTML = ""    
         agregarHTML = document.getElementById('divUsuario')
+        agregarHTML.classList.remove('ocultar')
     }
     agregarHTML.innerHTML = `
         <img class="fotoUsuario pointer" id="iconoUsuarioActivo" src="" alt="" onclick="toggleElemento('cardUsuario','toggle')">
