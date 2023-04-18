@@ -64,7 +64,7 @@ const logIn = () => {
             </div>
             <div class="contenidoVentana">
                 <div class="login">
-                    <form class="formLogin" action="" id="formLogin">
+                    <form class="formLogin" action="identificarse()" id="formLogin">
                         <span class"tituloFormLogin">Acceso al Sistema</span>
                         <div class="lineaFormulario">
                             <label for="email">Email:</label>
