@@ -1050,7 +1050,8 @@ boton:hover{
         flex-direction: column;
         gap: 2px;
         align-items: start;
-        width: 90%;
+        width: 85vw;
+        align-self: center;
     }
 
     .logotipoHeader {
