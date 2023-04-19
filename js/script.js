@@ -352,6 +352,56 @@ const buscarProducto = (seccion) => {
         } 
 }
 
+const llenarSelectOrdenacion = () => {
+    const lista = document.getElementById('ordenacionTipo')
+    const criterio = document.getElementById('ordenacion')
+    if (criterio.value== 1 ) {
+        lista.innerHTML = `
+        <option value="1">Ascendente (A -> Z)</option>
+        <option value="2">Descendente (Z -> A)</option>
+    `
+    } else {
+        lista.innerHTML = `
+        <option value="1">Precio Mas Barato</option>
+        <option value="2">Precio Mas Caro</option>
+    `
+    }
+}
+    
+const ordenarProductos = () => {
+    const criterio = document.getElementById('ordenacion')
+    const criterioTipo = document.getElementById('ordenacionTipo')
+
+    if (criterio.value == 1) {
+        if (criterioTipo.value == 1) {
+            productos.sort((a,b) => a.nombre.localeCompare(b.nombre))
+        } else {
+            productos.sort((a,b) => b.nombre.localeCompare(a.nombre))
+        }
+    } else {
+        if (criterioTipo.value == 1) {
+            productos.sort((a,b) => a.precio - b.precio)
+        } else {
+            productos.sort((a,b) => b.precio - a.precio)
+            }
+    }
+
+    let httpProductos = document.getElementById('cajonProductos')
+    httpProductos.innerHTML = ""
+        for (producto of productos) {
+            httpProductos.innerHTML += `
+                <div class="card">
+                    <img class="cardFotoProducto pointer" onclick="mostrarDatosProducto(${producto.id})" src="${producto.foto}" alt="lechuga">
+                    <span class="cardNombreProducto pointer" onclick="mostrarDatosProducto(${producto.id})">${producto.nombre}</span>
+                    <div class="pieCard">
+                        <span class="cardPrecioProducto">$ ${producto.precio}</span>
+                        <span class="cardMas pointer" onclick="mostrarDatosProducto(${producto.id})">mas datos</span>
+                    </div>
+                </div>
+            `
+        } 
+}
+
 
 const mostrarDatosProducto = (id) => {
     toggleVentana()
@@ -485,7 +535,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cargarCarritoLocal()
     
     mostrarProductos('db/productos.json','cajonProductos')
-
+    
     var input = document.getElementById('campoBuscar');
     input.addEventListener("keypress", (evento) => {
         if (evento.key === "Enter") {
