@@ -267,6 +267,12 @@ h1 {
     padding: 3px;
 }
 
+.divSelect {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
 .titulo {
     display: flex;
     flex-direction: row;
@@ -1040,7 +1046,12 @@ boton:hover{
         display: none;
     }
 
-    
+    .ordenacion {
+        flex-direction: column;
+        gap: 2px;
+        align-items: start;
+    }
+
     .logotipoHeader {
         margin-left: 0px;
         height: 50px;

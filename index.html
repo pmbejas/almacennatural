@@ -70,15 +70,17 @@
                  </div>
                  <div class="ordenacion">
                     <span class="textoOrdenacion">Ordenar:</span>
-                    <select class="campoOrdenacion" name="ordenacion" id="ordenacion" onchange="llenarSelectOrdenacion()">
-                        <option value="1">Nombre</option>
-                        <option value="2">Precio</option>
-                    </select>
-                    <select class="campoOrdenacion" name="ordenacionTipo" id="ordenacionTipo">
-                        <option value="1">Ascendente (A -> Z)</option>
-                        <option value="2">Descendente (Z -> A)</option>
-                    </select>
-                    <button class="boton btnAgregar" onclick="ordenarProductos()">Ordenar</button>
+                    <div class="divSelect">
+                        <select class="campoOrdenacion" name="ordenacion" id="ordenacion" onchange="llenarSelectOrdenacion()">
+                            <option value="1">Nombre</option>
+                            <option value="2">Precio</option>
+                        </select>
+                        <select class="campoOrdenacion" name="ordenacionTipo" id="ordenacionTipo">
+                            <option value="1">Ascendente (A -> Z)</option>
+                            <option value="2">Descendente (Z -> A)</option>
+                        </select>
+                        <button class="boton btnAgregar" onclick="ordenarProductos()">Ordenar</button>
+                    </div>
                  </div>
                  <div class="cajonProductos" id="cajonProductos">
                      
