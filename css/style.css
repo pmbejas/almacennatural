@@ -262,7 +262,7 @@ h1 {
 }
 
 .campoOrdenacion {
-    width: 150px;
+    width: 100px;
     border-radius: 5px;
     padding: 3px;
 }
@@ -1050,6 +1050,7 @@ boton:hover{
         flex-direction: column;
         gap: 2px;
         align-items: start;
+        width: 90%;
     }
 
     .logotipoHeader {

@@ -357,13 +357,13 @@ const llenarSelectOrdenacion = () => {
     const criterio = document.getElementById('ordenacion')
     if (criterio.value== 1 ) {
         lista.innerHTML = `
-        <option value="1">Ascendente (A -> Z)</option>
-        <option value="2">Descendente (Z -> A)</option>
+        <option value="1">A -> Z</option>
+        <option value="2">Z -> A</option>
     `
     } else {
         lista.innerHTML = `
-        <option value="1">Precio Mas Barato</option>
-        <option value="2">Precio Mas Caro</option>
+        <option value="1">Mas barato</option>
+        <option value="2">Mas caro</option>
     `
     }
 }
