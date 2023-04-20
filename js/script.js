@@ -591,7 +591,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!isNaN(formulario.telefono.value)){
                 if (formulario.opcionTelefono.value > 0 ) {
                     let contactado = ""
-                    if (formulario.opcionTelefono.value > 0 ) { 
+                    if (formulario.opcionTelefono.value == 1 ) { 
                         contactado = "Si" 
                     } else {
                         contactado = "NO" 
