@@ -14,5 +14,13 @@
         "email": "marianelamorzan@gmail.com",
         "contrasena": "prueba",
         "foto":"usuarioId2.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "Alejandro",
+        "apellido": "Collavino",
+        "email": "acollavino@gmail.com",
+        "contrasena": "prueba",
+        "foto":"usuarioId3.jpg"
     }
 ]
