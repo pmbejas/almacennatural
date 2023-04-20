@@ -13,6 +13,7 @@ let carrito = {
     totalPagar: 0.00,
     listadoProductos: []
 }
+
 const carritoLocal = window.localStorage;
 
 const mostrarMenuMovil = () => {
@@ -229,9 +230,46 @@ const eliminarCarrito = () => {
     guardarCarritoLocal()
 }
 
+const enviarMail = (plantilla, remitente, nombre, telefono, contactado, motivo, mensaje) => {
+    emailjs.init("zMsbicyxaT-LrXNpq");
+
+    emailjs.send("service_r3dvsk8", plantilla,{
+        nombre: nombre,
+        correoElectronico: remitente,
+        telefono: telefono,        
+        contactado: contactado,
+        motivo: motivo,
+        mensaje: mensaje,
+        });
+}
+
+
 const enviarPedido = () => {
+
+
     alerta('verde','Se ha enviado su pedido con éxito', 3000)
     eliminarCarrito()
+
+}
+
+const elegirMotivo = (idMotivo) => {
+    switch (idMotivo) {
+        case '1':
+            return 'Compra de Productos'
+            break;
+        case '2':
+            return 'Envío del Pedido'
+            break;
+        case '3':
+            return 'Formas de Pago'
+            break;
+        case '4':
+            return 'Pedidos Especiales'
+            break;
+        case '5':
+            return 'Otros'
+            break;
+        }   
 }
 
 const CarritoCompras = (accion) => {
@@ -552,7 +590,19 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             if (!isNaN(formulario.telefono.value)){
                 if (formulario.opcionTelefono.value > 0 ) {
+                    let contactado = ""
+                    if (formulario.opcionTelefono.value > 0 ) { 
+                        contactado = "Si" 
+                    } else {
+                        contactado = "NO" 
+                    }
+                    const motivo = elegirMotivo(formulario.tipoConsulta.value)
+                    enviarMail('template_ok6uxhj', formulario.email.value, formulario.nombre.value+' '+formulario.apellido.value, formulario.telefono.value, contactado, motivo, formulario.mensaje.value)
+
+                    enviarMail('template_pfrf0vm', formulario.email.value, formulario.nombre.value+' '+formulario.apellido.value, formulario.telefono.value, contactado, motivo, formulario.mensaje.value)
+
                     alerta('verde','se ha enviado su consulta con éxito', 3000);
+                    formulario.reset()
                 } else {
                     alerta('naranja','Por favor, indique si quiere ser contactado via Telefónica.', 3000);
                 }
