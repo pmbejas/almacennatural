@@ -6,21 +6,5 @@
         "email": "pmbejas@gmail.com",
         "contrasena": "prueba",
         "foto":"usuarioId1.jpg"
-    },
-    {
-        "id": 2,
-        "nombre": "Marianela",
-        "apellido": "Morzan",
-        "email": "marianelamorzan@gmail.com",
-        "contrasena": "prueba",
-        "foto":"usuarioId2.jpg"
-    },
-    {
-        "id": 3,
-        "nombre": "Alejandro",
-        "apellido": "Collavino",
-        "email": "acollavino@gmail.com",
-        "contrasena": "prueba",
-        "foto":"usuarioId3.jpg"
     }
 ]
